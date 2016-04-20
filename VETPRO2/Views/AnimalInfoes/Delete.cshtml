@@ -1,0 +1,80 @@
+﻿@model VETPRO2.Models.AnimalInfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AnimalInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalSpecies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalSpecies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalBreed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalBreed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalEstimatedWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalEstimatedWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

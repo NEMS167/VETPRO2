@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/Content/StyleSheet.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="verbar">
+        <ul class="b">
+            <li class="b"><a class="active" href="#home">Home</a></li>
+            <li class="b"><a href="#news">News</a></li>
+            <li class="b"><a href="#contact">Contact</a></li>
+            <li class="b"><a href="#about">About</a></li>
+        </ul>
+    </div>
+    <div class="sidebar">
+        <ul class="a">
+            <li class="a"><a class="active" href="#home">Home</a></li>
+            <li class="a"><a href="#news">News</a></li>
+            <li class="a"><a href="#contact">Contact</a></li>
+            <li class="a"><a href="#about">About</a></li>
+        </ul>
+    </div>
+    <div class="one">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - VETPRO2</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

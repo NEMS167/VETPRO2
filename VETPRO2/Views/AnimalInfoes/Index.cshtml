@@ -1,0 +1,69 @@
+﻿@model IEnumerable<VETPRO2.Models.AnimalInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "OwnerInfoes")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalSpecies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalBreed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalEstimatedWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalSpecies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalBreed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalEstimatedWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AnimalId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AnimalId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AnimalId })
+        </td>
+    </tr>
+}
+
+</table>
