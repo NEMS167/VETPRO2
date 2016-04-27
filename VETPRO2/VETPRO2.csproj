@@ -162,14 +162,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Content\App_Start\BundleConfig.cs" />
-    <Compile Include="Content\App_Start\FilterConfig.cs" />
-    <Compile Include="Content\App_Start\RouteConfig.cs" />
-    <Compile Include="Content\App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdditionalContactsController.cs" />
     <Compile Include="Controllers\AdditionalPetInfoesController.cs" />
     <Compile Include="Controllers\AnimalBehaviorsController.cs" />
-    <Compile Include="Controllers\AnimalHistoriesController.cs" />
+    <Compile Include="Controllers\AnimalHistory2Controller.cs" />
     <Compile Include="Controllers\AnimalInfoesController.cs" />
     <Compile Include="Controllers\ChipIdentificationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -193,6 +194,10 @@
     <Compile Include="Migrations\201604031828109_ShelterOperations.cs" />
     <Compile Include="Migrations\201604031828109_ShelterOperations.Designer.cs">
       <DependentUpon>201604031828109_ShelterOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604262034298_deletehistory.cs" />
+    <Compile Include="Migrations\201604262034298_deletehistory.Designer.cs">
+      <DependentUpon>201604262034298_deletehistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountViewModels.cs" />
@@ -280,11 +285,6 @@
     <Content Include="Views\AnimalBehaviors\Details.cshtml" />
     <Content Include="Views\AnimalBehaviors\Edit.cshtml" />
     <Content Include="Views\AnimalBehaviors\Index.cshtml" />
-    <Content Include="Views\AnimalHistories\Create.cshtml" />
-    <Content Include="Views\AnimalHistories\Delete.cshtml" />
-    <Content Include="Views\AnimalHistories\Details.cshtml" />
-    <Content Include="Views\AnimalHistories\Edit.cshtml" />
-    <Content Include="Views\AnimalHistories\Index.cshtml" />
     <Content Include="Views\ChipIdentifications\Create.cshtml" />
     <Content Include="Views\ChipIdentifications\Delete.cshtml" />
     <Content Include="Views\ChipIdentifications\Details.cshtml" />
@@ -320,9 +320,16 @@
     <Content Include="Views\ShelterOperations\Details.cshtml" />
     <Content Include="Views\ShelterOperations\Edit.cshtml" />
     <Content Include="Views\ShelterOperations\Index.cshtml" />
+    <Content Include="Views\AnimalHistory2\Create.cshtml" />
+    <Content Include="Views\AnimalHistory2\Delete.cshtml" />
+    <Content Include="Views\AnimalHistory2\Details.cshtml" />
+    <Content Include="Views\AnimalHistory2\Edit.cshtml" />
+    <Content Include="Views\AnimalHistory2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\test2\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -341,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604031828109_ShelterOperations.resx">
       <DependentUpon>201604031828109_ShelterOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604262034298_deletehistory.resx">
+      <DependentUpon>201604262034298_deletehistory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

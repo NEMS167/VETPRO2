@@ -111,7 +111,7 @@ namespace VETPRO2.Controllers
         {
             AnimalInfo animalInfo = db.AnimalInfos.Find(id);
             AnimalBehavior animalBehavior = db.AnimalBehavior.Find(id);
-            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
+            AnimalHistory2 animalHistory = db.AnimalHistory.Find(id);
             ChipIdentification chipIdentification = db.ChipIdentification.Find(id);
             AdditionalContact additionalContact = db.AdditionalContact.Find(id);
             AdditionalPetInfo additionalPetInfo = db.AdditonalPetInfo.Find(id);

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/Content/StyleSheet.css">
+    //<link rel="stylesheet" type="text/css" href="/Content/StyleSheet.css">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -11,22 +11,27 @@
 </head>
 <body>
     <div class="banner"></div>
-    <div class="verbar">
+    <div class="topbar">
         <ul class="b">
-            <li class="b"><a class="active" href="#home">Home</a></li>
-            <li class="b"><a href="#news">News</a></li>
-            <li class="b"><a href="#contact">Contact</a></li>
-            <li class="b"><a href="#about">About</a></li>
+            <li class="b">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="b">@Html.ActionLink("Profile", "Index", "Home")</li>
+            <li class="b">@Html.ActionLink("Logout", "Index", "Home")</li>
         </ul>
     </div>
-    <div class="sidebar">
-        <ul class="a">
-            <li class="a"><a class="active" href="#home">Home</a></li>
-            <li class="a"><a href="#news">News</a></li>
-            <li class="a"><a href="#contact">Contact</a></li>
-            <li class="a"><a href="#about">About</a></li>
-        </ul>
-    </div>
+<div class="sidebar">
+    <ul class="a">
+        <li class="a">@Html.ActionLink("Owner", "Details", "OwnerInfoes", new {id=1}, null)</li>
+        <li class="a">@Html.ActionLink("Additional Contact Information", "Details", "AdditionalContacts", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("Insurance", "Details", "Insurances", new { id = 1 }, null)</li>
+    </ul>
+    <ul class="a">
+        <li class="a">@Html.ActionLink("Animal", "Details", "AnimalInfoes", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("History", "Details", "AnimalHistory2", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("Behavior", "Details", "AnimalBehaviors", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("Tracking Operations", "Index", "TrackingOperations")</li>
+        <li class="a">@Html.ActionLink("Shelter Operations", "Index", "ShelterOperations")</li>
+    </ul>
+</div>
     <div class="one">
         @RenderBody()
         <hr />

@@ -10,107 +10,107 @@ using VETPRO2.Models;
 
 namespace VETPRO2.Controllers
 {
-    public class AnimalHistoriesController : Controller
+    public class AnimalHistory2Controller : Controller
     {
         private VetContext db = new VetContext();
 
-        // GET: AnimalHistories
+        // GET: AnimalHistory2
         public ActionResult Index()
         {
             return View(db.AnimalHistory.ToList());
         }
 
-        // GET: AnimalHistories/Details/5
+        // GET: AnimalHistory2/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
-            if (animalHistory == null)
+            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
+            if (animalHistory2 == null)
             {
                 return HttpNotFound();
             }
-            return View(animalHistory);
+            return View(animalHistory2);
         }
 
-        // GET: AnimalHistories/Create
+        // GET: AnimalHistory2/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AnimalHistories/Create
+        // POST: AnimalHistory2/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory animalHistory)
+        public ActionResult Create([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory2 animalHistory2)
         {
             if (ModelState.IsValid)
             {
-                db.AnimalHistory.Add(animalHistory);
+                db.AnimalHistory.Add(animalHistory2);
                 db.SaveChanges();
-                return RedirectToAction("Create", "ChipIdentifications");
+                return RedirectToAction("Index");
             }
 
-            return View(animalHistory);
+            return View(animalHistory2);
         }
 
-        // GET: AnimalHistories/Edit/5
+        // GET: AnimalHistory2/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
-            if (animalHistory == null)
+            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
+            if (animalHistory2 == null)
             {
                 return HttpNotFound();
             }
-            return View(animalHistory);
+            return View(animalHistory2);
         }
 
-        // POST: AnimalHistories/Edit/5
+        // POST: AnimalHistory2/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory animalHistory)
+        public ActionResult Edit([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory2 animalHistory2)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(animalHistory).State = EntityState.Modified;
+                db.Entry(animalHistory2).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(animalHistory);
+            return View(animalHistory2);
         }
 
-        // GET: AnimalHistories/Delete/5
+        // GET: AnimalHistory2/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
-            if (animalHistory == null)
+            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
+            if (animalHistory2 == null)
             {
                 return HttpNotFound();
             }
-            return View(animalHistory);
+            return View(animalHistory2);
         }
 
-        // POST: AnimalHistories/Delete/5
+        // POST: AnimalHistory2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
-            db.AnimalHistory.Remove(animalHistory);
+            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
+            db.AnimalHistory.Remove(animalHistory2);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

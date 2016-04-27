@@ -1,14 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using Microsoft.Owin.Security;
 
 namespace VETPRO2.Models
 {
+    public class CompositeModel
+    {
+        public AnimalInfo AnimalInfo { get; set; }
+        public AnimalBehavior AnimalBehavior { get; set;}
+        public AdditionalPetInfo AdditionalPetInfo { get; set; }
+        public AnimalHistory2 AnimalHistory2 { get; set; }
+        public ChipIdentification ChipIdentification { get; set; }
+        //public MedicalHistory MedicalHistory { get; set; }
+
+
+
+    }
+
+    public class OwnerCompositeModel
+    {
+        public OwnerInfo OwnerInfo { get; set; }
+        public AdditionalContact AdditionalContact { get; set; }
+        public Insurance Insurance { get; set; }
+        public LiabilityRelease LiabilityRelease { get; set; }
+        public SecondaryContact SecondaryContact { get; set; }
+    }
+
+    public class FacilityCompositeModel
+    {
+        public EvacCountyAdditionalInfo EvacCountyAdditionalInfo { get; set; }
+        public EvacCountyContact EvacCountyContact { get; set; }
+        public EvacCountySecondaryContact EvacCountySecondaryContact { get; set; }
+        public EvacCountyInfo EvacCountyInfo { get; set; }
+        public EvacHubAdditionalInfo EvacHubAdditionalInfo { get; set; }
+        public EvacHubContact EvacHubContact { get; set; }
+        public EvacHubSecondaryContact EvacHubSecondaryContact { get; set; }
+        public EvacHubInfo EvacHubInfo { get; set; }
+        public ReceptionCenterInfo ReceptionCenterInfo { get; set; }
+        public ReceptionCenterAdditionalInfo  ReceptionCenterAdditionalInfo{ get; set;}
+        public ReceptionCenterSecondaryContact ReceptionCenterSecondaryContact { get; set; }
+        public ShelterContact ShelterContact { get; set; }
+        public ShelterAdditionalInfo ShelterAdditionalInfo { get; set; }
+        public ShelterSecondaryContact ShelterSecondaryContact { get; set; }
+        public ShelterCapacity ShelterCapacity { get; set; }
+        public ShelterOccupancy ShelterOccupancy { get; set; }
+        public ShelterOperations ShelterOperations { get; set; }
+        public VetMedOpAdditionalInfo VetMedOpAdditionalInfo { get; set; }
+        public VetMedOpContact VetMedOpContact { get; set; }
+        public VetMedOpSecondaryContact VetMedOpSecondaryContact { get; set; }
+        public VetMedOpInfo VetMedOpInfo { get; set; }
+        public VetMedOpCapacity VetMedOpCapacity { get; set; }
+        public VetMedOpOccupancy VetMedOpOccupancy { get; set; }
+
+
+
+    }
+
+
     public class AdditionalContact
     {
         public int Id { get; set; }
@@ -24,7 +80,9 @@ namespace VETPRO2.Models
     {
         public int Id { get; set; }
         public int AnimalId { get; set; } //foreign key, grab animal id number from animal id table
+        [Display(Name = "Belongings")]
         public string Belongings { get; set; }
+        [Display(Name = "Comments")]
         public string Comment { get; set; }
 
     }
@@ -33,13 +91,25 @@ namespace VETPRO2.Models
     {
         public int Id { get; set; }
         public int AnimalId { get; set; } //foreign key, grab animal id number from animal id table
+        [Display(Name="Agression Comments")]
         public string AggressionComments { get; set; }
     }
 
-    public class AnimalHistory
+    /*public class AnimalHistory
     {
         public int Id { get; set; } //foreign key, grab animal id number from animal id table
+        [Display(Name = "Current Medications")]
         public string CurrentMedication { get; set; }
+        [Display(Name = "Allergies")]
+        public string AnimalAllergies { get; set; }
+    }*/
+
+    public class AnimalHistory2
+    {
+        public int Id { get; set; } //foreign key, grab animal id number from animal id table
+        [Display(Name = "Current Medications")]
+        public string CurrentMedication { get; set; }
+        [Display(Name = "Allergies")]
         public string AnimalAllergies { get; set; }
     }
 
@@ -48,12 +118,19 @@ namespace VETPRO2.Models
         [Key]
         public int AnimalId { get; set; } //this is the primary key number you'll be needing for a lot of tables!!!
         public string OwnerId { get; set; } //foreign key, grab owner id number from the owner id table
+        [Display(Name = "Name")]
         public string AnimalName { get; set; }
+        [Display(Name = "Species")]
         public string AnimalSpecies { get; set; }
+        [Display(Name = "Breed")]
         public string AnimalBreed { get; set; }
+        [Display(Name = "Gender")]
         public char AnimalGender { get; set; }
+        [Display(Name = "Age")]
         public int AnimalAge { get; set; }
+        [Display(Name = "Estimated Weight")]
         public int AnimalEstimatedWeight { get; set; }
+        [Display(Name = "Description")]
         public string AnimalDescription { get; set; }        //we need to figure out how to add the animals photos to this!!
     }
 
@@ -61,7 +138,9 @@ namespace VETPRO2.Models
     {
         public int Id { get; set; }
         public int AnimalId { get; set; } //foreign key, grab animal id number from the animal id table
+        [Display(Name = "Microchip Number")]
         public string MicrochipNumber { get; set; }
+        [Display(Name = "Eartag Number")]
         public string EartagNumber { get; set; }
     }
 
@@ -280,7 +359,7 @@ namespace VETPRO2.Models
         public string Email { get; set; }
     }
 
-    public class ShelterSecondaryContact
+    public class ShelterSecondaryContact 
     {
         public int Id { get; set; }
         public int ShelterId { get; set; } //foreign key, grab evac hub id number from the evac hub id table
@@ -290,7 +369,7 @@ namespace VETPRO2.Models
         public string Email { get; set; }
     }
 
-    public class ShelterInfo
+    public class ShelterInfo 
     {
         [Key]
         public int ShelterId { get; set; } //this is the primary key number for all the evac hub tables
@@ -398,7 +477,7 @@ namespace VETPRO2.Models
         public DbSet<AdditionalContact> AdditionalContact { get; set; }
         public DbSet<AdditionalPetInfo> AdditonalPetInfo { get; set; }
         public DbSet<AnimalBehavior> AnimalBehavior { get; set; }
-        public DbSet<AnimalHistory> AnimalHistory { get; set; }
+        public DbSet<AnimalHistory2> AnimalHistory { get; set; }
         public DbSet<AnimalInfo> AnimalInfos { get; set; }
         public DbSet<ChipIdentification> ChipIdentification { get; set; }
         public DbSet<EvacCountyAdditionalInfo> EvacCountyAdditionalInfo { get; set; }
