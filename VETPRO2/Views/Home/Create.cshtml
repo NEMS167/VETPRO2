@@ -1,0 +1,137 @@
+﻿@model VETPRO2.Models.CompositeModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+ 
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Animal Info</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalInfo.AnimalName, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalInfo.AnimalName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnimalInfo.AnimalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalInfo.AnimalSpecies, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalInfo.AnimalSpecies, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnimalInfo.AnimalSpecies, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalInfo.AnimalBreed, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalInfo.AnimalBreed, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnimalInfo.AnimalBreed, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalInfo.AnimalAge, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalInfo.AnimalAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnimalInfo.AnimalAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalInfo.AnimalEstimatedWeight, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalInfo.AnimalEstimatedWeight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnimalInfo.AnimalEstimatedWeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalInfo.AnimalDescription, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalInfo.AnimalDescription, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AnimalInfo.AnimalDescription, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalBehavior.AggressionComments, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalBehavior.AggressionComments, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AnimalBehavior.AggressionComments, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalHistory.CurrentMedication, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalHistory.CurrentMedication, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AnimalHistory.CurrentMedication, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalHistory.AnimalAllergies, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AnimalHistory.AnimalAllergies, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AnimalHistory.AnimalAllergies, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdditionalPetInfo.Belongings, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdditionalPetInfo.Belongings, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AdditionalPetInfo.Belongings, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdditionalPetInfo.Comment, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdditionalPetInfo.Comment, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AdditionalPetInfo.Comment, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChipIdentification.EartagNumber, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChipIdentification.EartagNumber, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.ChipIdentification.EartagNumber, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChipIdentification.MicrochipNumber, htmlAttributes: new {@class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChipIdentification.MicrochipNumber, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.ChipIdentification.MicrochipNumber, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Send" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Cancel", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

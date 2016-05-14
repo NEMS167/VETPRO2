@@ -10,7 +10,7 @@ using VETPRO2.Models;
 
 namespace VETPRO2.Controllers
 {
-    public class AnimalHistory2Controller : Controller
+    public class AnimalHistoryController : Controller
     {
         private VetContext db = new VetContext();
 
@@ -27,12 +27,12 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
-            if (animalHistory2 == null)
+            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
+            if (animalHistory == null)
             {
                 return HttpNotFound();
             }
-            return View(animalHistory2);
+            return View(animalHistory);
         }
 
         // GET: AnimalHistory2/Create
@@ -46,16 +46,16 @@ namespace VETPRO2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory2 animalHistory2)
+        public ActionResult Create([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory animalHistory)
         {
             if (ModelState.IsValid)
             {
-                db.AnimalHistory.Add(animalHistory2);
+                db.AnimalHistory.Add(animalHistory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(animalHistory2);
+            return View(animalHistory);
         }
 
         // GET: AnimalHistory2/Edit/5
@@ -65,12 +65,12 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
-            if (animalHistory2 == null)
+            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
+            if (animalHistory == null)
             {
                 return HttpNotFound();
             }
-            return View(animalHistory2);
+            return View(animalHistory);
         }
 
         // POST: AnimalHistory2/Edit/5
@@ -78,15 +78,15 @@ namespace VETPRO2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory2 animalHistory2)
+        public ActionResult Edit([Bind(Include = "Id,CurrentMedication,AnimalAllergies")] AnimalHistory animalHistory)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(animalHistory2).State = EntityState.Modified;
+                db.Entry(animalHistory).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(animalHistory2);
+            return View(animalHistory);
         }
 
         // GET: AnimalHistory2/Delete/5
@@ -96,12 +96,12 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
-            if (animalHistory2 == null)
+            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
+            if (animalHistory == null)
             {
                 return HttpNotFound();
             }
-            return View(animalHistory2);
+            return View(animalHistory);
         }
 
         // POST: AnimalHistory2/Delete/5
@@ -109,8 +109,8 @@ namespace VETPRO2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AnimalHistory2 animalHistory2 = db.AnimalHistory.Find(id);
-            db.AnimalHistory.Remove(animalHistory2);
+            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
+            db.AnimalHistory.Remove(animalHistory);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

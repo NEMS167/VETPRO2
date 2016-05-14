@@ -17,7 +17,7 @@ namespace VETPRO2.Controllers
         // GET: AnimalInfoes
         public ActionResult Index()
         {
-            return View(db.AnimalInfos.ToList());
+            return View(db.AnimalInfo.ToList());
         }
 
         // GET: AnimalInfoes/Details/5
@@ -27,7 +27,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalInfo animalInfo = db.AnimalInfos.Find(id);
+            AnimalInfo animalInfo = db.AnimalInfo.Find(id);
             if (animalInfo == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace VETPRO2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.AnimalInfos.Add(animalInfo);
+                db.AnimalInfo.Add(animalInfo);
                 db.SaveChanges();
                 return RedirectToAction("Create", "AnimalBehaviors");
             }
@@ -65,7 +65,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalInfo animalInfo = db.AnimalInfos.Find(id);
+            AnimalInfo animalInfo = db.AnimalInfo.Find(id);
             if (animalInfo == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AnimalInfo animalInfo = db.AnimalInfos.Find(id);
+            AnimalInfo animalInfo = db.AnimalInfo.Find(id);
             if (animalInfo == null)
             {
                 return HttpNotFound();
@@ -109,17 +109,17 @@ namespace VETPRO2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AnimalInfo animalInfo = db.AnimalInfos.Find(id);
+            AnimalInfo animalInfo = db.AnimalInfo.Find(id);
             AnimalBehavior animalBehavior = db.AnimalBehavior.Find(id);
-            AnimalHistory2 animalHistory = db.AnimalHistory.Find(id);
+            AnimalHistory animalHistory = db.AnimalHistory.Find(id);
             ChipIdentification chipIdentification = db.ChipIdentification.Find(id);
             AdditionalContact additionalContact = db.AdditionalContact.Find(id);
             AdditionalPetInfo additionalPetInfo = db.AdditonalPetInfo.Find(id);
             Insurance insurance = db.Insurance.Find(id);
             MedicalHistory medicalHistory = db.MedicalHistory.Find(id);
-            SecondaryContact secondaryContact = db.SecondaryContacts.Find(id);
-            TrackingOperations trackingOperations = db.TrackingOperationses.Find(id);
-            db.AnimalInfos.Remove(animalInfo);
+            SecondaryContact secondaryContact = db.SecondaryContact.Find(id);
+            TrackingOperations trackingOperations = db.TrackingOperations.Find(id);
+            db.AnimalInfo.Remove(animalInfo);
             db.AnimalBehavior.Remove(animalBehavior);
             db.AnimalHistory.Remove(animalHistory);
             db.ChipIdentification.Remove(chipIdentification);
@@ -127,8 +127,8 @@ namespace VETPRO2.Controllers
             db.AdditonalPetInfo.Remove(additionalPetInfo);
             db.Insurance.Remove(insurance);
             db.MedicalHistory.Remove(medicalHistory);
-            db.SecondaryContacts.Remove(secondaryContact);
-            db.TrackingOperationses.Remove(trackingOperations);
+            db.SecondaryContact.Remove(secondaryContact);
+            db.TrackingOperations.Remove(trackingOperations);
 
             db.SaveChanges();
             return RedirectToAction("Index");

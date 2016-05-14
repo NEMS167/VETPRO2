@@ -17,7 +17,7 @@ namespace VETPRO2.Controllers
         // GET: SecondaryContacts
         public ActionResult Index()
         {
-            return View(db.SecondaryContacts.ToList());
+            return View(db.SecondaryContact.ToList());
         }
 
         // GET: SecondaryContacts/Details/5
@@ -27,7 +27,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SecondaryContact secondaryContact = db.SecondaryContacts.Find(id);
+            SecondaryContact secondaryContact = db.SecondaryContact.Find(id);
             if (secondaryContact == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace VETPRO2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.SecondaryContacts.Add(secondaryContact);
+                db.SecondaryContact.Add(secondaryContact);
                 db.SaveChanges();
                 return RedirectToAction("Create", "AdditionalContacts");
             }
@@ -65,7 +65,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SecondaryContact secondaryContact = db.SecondaryContacts.Find(id);
+            SecondaryContact secondaryContact = db.SecondaryContact.Find(id);
             if (secondaryContact == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SecondaryContact secondaryContact = db.SecondaryContacts.Find(id);
+            SecondaryContact secondaryContact = db.SecondaryContact.Find(id);
             if (secondaryContact == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace VETPRO2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SecondaryContact secondaryContact = db.SecondaryContacts.Find(id);
-            db.SecondaryContacts.Remove(secondaryContact);
+            SecondaryContact secondaryContact = db.SecondaryContact.Find(id);
+            db.SecondaryContact.Remove(secondaryContact);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

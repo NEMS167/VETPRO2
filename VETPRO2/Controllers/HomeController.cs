@@ -14,57 +14,38 @@ namespace VETPRO2.Controllers
     {
         private VetContext db = new VetContext();
 
+        public ActionResult StartPage()
+        {
+            return View();
+        }
+
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(CompositeModel model)
+        public ActionResult Create(CompositeModel model)
         {
             if (ModelState.IsValid)
             {
-                db.AnimalInfos.Add(model.AnimalInfo);
-                db.AnimalHistory.Add(model.AnimalHistory2);
+                model.AnimalInfo.AnimalId = Guid.NewGuid().ToString();
+                db.AnimalInfo.Add(model.AnimalInfo);
                 db.AnimalBehavior.Add(model.AnimalBehavior);
+                db.AnimalHistory.Add(model.AnimalHistory);
                 db.AdditonalPetInfo.Add(model.AdditionalPetInfo);
                 db.ChipIdentification.Add(model.ChipIdentification);
                 db.SaveChanges();
-                return View("Index", model);
-            }
-            //model.HeaderText = "Strongly typed model used here, no view bag";
-            return View(model);
-        }
-
-        public ActionResult MyEditActionOne(CompositeModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                db.AnimalInfos.Add(model.AnimalInfo);
-                db.AnimalHistory.Add(model.AnimalHistory2);
-                db.AnimalBehavior.Add(model.AnimalBehavior);
-                db.AdditonalPetInfo.Add(model.AdditionalPetInfo);
-                db.ChipIdentification.Add(model.ChipIdentification);
-                db.SaveChanges();
-                return View("Index", model);
+                return RedirectToAction("Index", "AnimalInfoes");
             }
 
             throw new Exception("My Model state is not valid");
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }

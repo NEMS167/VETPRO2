@@ -1,0 +1,228 @@
+﻿@{
+    Layout = "~/Views/Shared/Facility.cshtml";
+}
+@model VETPRO2.Models.FacilityCompositeModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Animal Info</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.LocationKind, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.LocationKind, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.LocationKind, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.LocationName, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.LocationName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.LocationName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.Address, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.City, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.State, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.ZipCode, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.ZipCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.PhoneNumber, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.Directions, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.Directions, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.Directions, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityInfo.OperationalHours, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityInfo.OperationalHours, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityInfo.OperationalHours, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityContact.FirstName, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityContact.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityContact.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityContact.LastName, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityContact.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityContact.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityContact.PhoneNumber, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityContact.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityContact.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityContact.Email, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityContact.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityContact.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilitySecondaryContact.FirstName, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilitySecondaryContact.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilitySecondaryContact.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilitySecondaryContact.LastName, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilitySecondaryContact.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilitySecondaryContact.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilitySecondaryContact.PhoneNumber, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilitySecondaryContact.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilitySecondaryContact.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilitySecondaryContact.Email, htmlAttributes: new {@class = "fillout"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilitySecondaryContact.Email, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.FacilitySecondaryContact.Email, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityAdditionalInfo.FacilityNotes, htmlAttributes: new {@class = "fillout"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityAdditionalInfo.FacilityNotes, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.FacilityAdditionalInfo.FacilityNotes, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityCapacity.SmallAnimalCapacity, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityCapacity.SmallAnimalCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityCapacity.SmallAnimalCapacity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityCapacity.LargeAnimalCapacity, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityCapacity.LargeAnimalCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityCapacity.LargeAnimalCapacity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityCapacity.AdditionalCapacityInfo, htmlAttributes: new {@class = "fillout"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityCapacity.AdditionalCapacityInfo, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.FacilityCapacity.AdditionalCapacityInfo, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityOccupancy.SmallAnimalOccupancy, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityOccupancy.SmallAnimalOccupancy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityOccupancy.SmallAnimalOccupancy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacilityOccupancy.LargeAnimalOccupancy, htmlAttributes: new { @class = "fillout" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacilityOccupancy.LargeAnimalOccupancy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacilityOccupancy.LargeAnimalOccupancy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FacilityOccupancy.AdditionalOccupancyInfo, htmlAttributes: new {@class = "fillout"})
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FacilityOccupancy.AdditionalOccupancyInfo, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.FacilityOccupancy.AdditionalOccupancyInfo, "", new {@class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Cancel", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

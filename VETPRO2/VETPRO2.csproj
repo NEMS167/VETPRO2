@@ -170,9 +170,12 @@
     <Compile Include="Controllers\AdditionalContactsController.cs" />
     <Compile Include="Controllers\AdditionalPetInfoesController.cs" />
     <Compile Include="Controllers\AnimalBehaviorsController.cs" />
+    <Compile Include="Controllers\AnimalHistoriesController.cs" />
     <Compile Include="Controllers\AnimalHistory2Controller.cs" />
     <Compile Include="Controllers\AnimalInfoesController.cs" />
     <Compile Include="Controllers\ChipIdentificationsController.cs" />
+    <Compile Include="Controllers\FacilityCompositeModelController.cs" />
+    <Compile Include="Controllers\FacilityInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsurancesController.cs" />
     <Compile Include="Controllers\MedicalHistoriesController.cs" />
@@ -198,6 +201,54 @@
     <Compile Include="Migrations\201604262034298_deletehistory.cs" />
     <Compile Include="Migrations\201604262034298_deletehistory.Designer.cs">
       <DependentUpon>201604262034298_deletehistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290312461_4.28.cs" />
+    <Compile Include="Migrations\201604290312461_4.28.Designer.cs">
+      <DependentUpon>201604290312461_4.28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290432486_animalinfoid.cs" />
+    <Compile Include="Migrations\201604290432486_animalinfoid.Designer.cs">
+      <DependentUpon>201604290432486_animalinfoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290504099_animalinfofinal.cs" />
+    <Compile Include="Migrations\201604290504099_animalinfofinal.Designer.cs">
+      <DependentUpon>201604290504099_animalinfofinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290917130_updates.cs" />
+    <Compile Include="Migrations\201604290917130_updates.Designer.cs">
+      <DependentUpon>201604290917130_updates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290946583_updates2.cs" />
+    <Compile Include="Migrations\201604290946583_updates2.Designer.cs">
+      <DependentUpon>201604290946583_updates2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291234392_changedsomestuff.cs" />
+    <Compile Include="Migrations\201604291234392_changedsomestuff.Designer.cs">
+      <DependentUpon>201604291234392_changedsomestuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291245103_stringids.cs" />
+    <Compile Include="Migrations\201604291245103_stringids.Designer.cs">
+      <DependentUpon>201604291245103_stringids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291308089_name.cs" />
+    <Compile Include="Migrations\201604291308089_name.Designer.cs">
+      <DependentUpon>201604291308089_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291318067_fix.cs" />
+    <Compile Include="Migrations\201604291318067_fix.Designer.cs">
+      <DependentUpon>201604291318067_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291323541_fix2.cs" />
+    <Compile Include="Migrations\201604291323541_fix2.Designer.cs">
+      <DependentUpon>201604291323541_fix2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291325141_fix3.cs" />
+    <Compile Include="Migrations\201604291325141_fix3.Designer.cs">
+      <DependentUpon>201604291325141_fix3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291415234_fix4.cs" />
+    <Compile Include="Migrations\201604291415234_fix4.Designer.cs">
+      <DependentUpon>201604291415234_fix4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\AccountViewModels.cs" />
@@ -241,10 +292,10 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Owner.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -320,11 +371,25 @@
     <Content Include="Views\ShelterOperations\Details.cshtml" />
     <Content Include="Views\ShelterOperations\Edit.cshtml" />
     <Content Include="Views\ShelterOperations\Index.cshtml" />
-    <Content Include="Views\AnimalHistory2\Create.cshtml" />
-    <Content Include="Views\AnimalHistory2\Delete.cshtml" />
-    <Content Include="Views\AnimalHistory2\Details.cshtml" />
-    <Content Include="Views\AnimalHistory2\Edit.cshtml" />
-    <Content Include="Views\AnimalHistory2\Index.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Account\Register2.cshtml" />
+    <Content Include="Views\Account\Login2.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Shared\NotLog.cshtml" />
+    <Content Include="Views\Shared\Facility.cshtml" />
+    <Content Include="Views\Home\StartPage.cshtml" />
+    <Content Include="Views\FacilityCompositeModel\Create.cshtml" />
+    <Content Include="Views\FacilityCompositeModel\Index.cshtml" />
+    <Content Include="Views\FacilityInfoes\Create.cshtml" />
+    <Content Include="Views\FacilityInfoes\Delete.cshtml" />
+    <Content Include="Views\FacilityInfoes\Details.cshtml" />
+    <Content Include="Views\FacilityInfoes\Edit.cshtml" />
+    <Content Include="Views\FacilityInfoes\Index.cshtml" />
+    <Content Include="Views\AnimalHistories\Create.cshtml" />
+    <Content Include="Views\AnimalHistories\Delete.cshtml" />
+    <Content Include="Views\AnimalHistories\Details.cshtml" />
+    <Content Include="Views\AnimalHistories\Edit.cshtml" />
+    <Content Include="Views\AnimalHistories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,6 +417,45 @@
     <EmbeddedResource Include="Migrations\201604262034298_deletehistory.resx">
       <DependentUpon>201604262034298_deletehistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604290312461_4.28.resx">
+      <DependentUpon>201604290312461_4.28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604290432486_animalinfoid.resx">
+      <DependentUpon>201604290432486_animalinfoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604290504099_animalinfofinal.resx">
+      <DependentUpon>201604290504099_animalinfofinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604290917130_updates.resx">
+      <DependentUpon>201604290917130_updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604290946583_updates2.resx">
+      <DependentUpon>201604290946583_updates2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291234392_changedsomestuff.resx">
+      <DependentUpon>201604291234392_changedsomestuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291245103_stringids.resx">
+      <DependentUpon>201604291245103_stringids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291308089_name.resx">
+      <DependentUpon>201604291308089_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291318067_fix.resx">
+      <DependentUpon>201604291318067_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291323541_fix2.resx">
+      <DependentUpon>201604291323541_fix2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291325141_fix3.resx">
+      <DependentUpon>201604291325141_fix3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291415234_fix4.resx">
+      <DependentUpon>201604291415234_fix4.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

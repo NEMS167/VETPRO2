@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="topbar">
+        <ul class="b">
+            <li class="b">@Html.ActionLink("Home", "Index", "Home")</li>
+            <div style="float: right">
+                <li class="b">@Html.ActionLink("Profile", "Index", "Home")</li>
+                <li class="b">@Html.ActionLink("Logout", "Index", "Home")</li>
+            </div>
+        </ul>
+    </div>
+<div class="sidebar">
+    <ul class="a">
+        <li class="a">@Html.ActionLink("Owner", "Details", "OwnerInfoes", new {id=1}, null)</li>
+        <li class="a">@Html.ActionLink("Contact Information", "Details", "AdditionalContacts", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("Insurance", "Details", "Insurances", new { id = 1 }, null)</li>
+    </ul>
+    <ul class="a">
+        <li class="a">@Html.ActionLink("Animal", "Details", "AnimalInfoes", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("History", "Details", "AnimalHistory2", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("Behavior", "Details", "AnimalBehaviors", new { id = 1 }, null)</li>
+        <li class="a">@Html.ActionLink("Tracking Operations", "Index", "TrackingOperations")</li>
+        <li class="a">@Html.ActionLink("Shelter Operations", "Index", "ShelterOperations")</li>
+    </ul>
+</div>
+    <div class="one">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

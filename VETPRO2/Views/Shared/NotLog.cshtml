@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="topbar">
+        <ul class="b">
+            <li class="b">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="b">@Html.ActionLink("Contact", "Index", "Home", new { id = 1 }, null)</li>
+            <div style="float: right">
+                <li class="b">@Html.ActionLink("Login", "Login2", "Account")</li>
+            <li class="b">@Html.ActionLink("Register", "Register2", "Account")</li>
+            </div>
+</ul>
+    </div>
+<div class="sidebar">
+    <ul class="a">
+        
+    </ul>
+ 
+</div>
+    <div class="one">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

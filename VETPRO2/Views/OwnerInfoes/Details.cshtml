@@ -1,4 +1,7 @@
-﻿@model VETPRO2.Models.OwnerInfo
+﻿@{
+    Layout = "~/Views/Shared/Facility.cshtml";
+}
+@model VETPRO2.Models.OwnerInfo
 
 @{
     ViewBag.Title = "Details";
@@ -8,7 +11,7 @@
 
 <div>
     <h4>OwnerInfo</h4>
-    <hr />
+    <hr/>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -108,6 +111,10 @@
 
     </dl>
 </div>
+<h2>More Owner Info</h2>
+<p>
+    @Html.ActionLink("Additional Contact Information", "Details", "AdditionalContacts", new { id = Model.Id }, null) |
+    @Html.ActionLink("Insurance", "Details", "Insurances", new { id = Model.Id }, null) |
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.OwnerId }) |
     @Html.ActionLink("Back to List", "Index")

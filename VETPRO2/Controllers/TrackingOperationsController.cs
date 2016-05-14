@@ -17,7 +17,7 @@ namespace VETPRO2.Controllers
         // GET: TrackingOperations
         public ActionResult Index()
         {
-            return View(db.TrackingOperationses.ToList());
+            return View(db.TrackingOperations.ToList());
         }
 
         // GET: TrackingOperations/Details/5
@@ -27,7 +27,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TrackingOperations trackingOperations = db.TrackingOperationses.Find(id);
+            TrackingOperations trackingOperations = db.TrackingOperations.Find(id);
             if (trackingOperations == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace VETPRO2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TrackingOperationses.Add(trackingOperations);
+                db.TrackingOperations.Add(trackingOperations);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TrackingOperations trackingOperations = db.TrackingOperationses.Find(id);
+            TrackingOperations trackingOperations = db.TrackingOperations.Find(id);
             if (trackingOperations == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TrackingOperations trackingOperations = db.TrackingOperationses.Find(id);
+            TrackingOperations trackingOperations = db.TrackingOperations.Find(id);
             if (trackingOperations == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace VETPRO2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TrackingOperations trackingOperations = db.TrackingOperationses.Find(id);
-            db.TrackingOperationses.Remove(trackingOperations);
+            TrackingOperations trackingOperations = db.TrackingOperations.Find(id);
+            db.TrackingOperations.Remove(trackingOperations);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

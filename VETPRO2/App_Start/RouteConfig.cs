@@ -16,7 +16,7 @@ namespace VETPRO2
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "AnimalInfoes", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Account", action = "Register2", id = UrlParameter.Optional }
             );
         }
     }

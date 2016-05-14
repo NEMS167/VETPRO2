@@ -17,7 +17,7 @@ namespace VETPRO2.Controllers
         // GET: ShelterOperations
         public ActionResult Index()
         {
-            return View(db.ShelterOperationses.ToList());
+            return View(db.ShelterOperations.ToList());
         }
 
         // GET: ShelterOperations/Details/5
@@ -27,7 +27,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ShelterOperations shelterOperations = db.ShelterOperationses.Find(id);
+            ShelterOperations shelterOperations = db.ShelterOperations.Find(id);
             if (shelterOperations == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace VETPRO2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.ShelterOperationses.Add(shelterOperations);
+                db.ShelterOperations.Add(shelterOperations);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ShelterOperations shelterOperations = db.ShelterOperationses.Find(id);
+            ShelterOperations shelterOperations = db.ShelterOperations.Find(id);
             if (shelterOperations == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace VETPRO2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ShelterOperations shelterOperations = db.ShelterOperationses.Find(id);
+            ShelterOperations shelterOperations = db.ShelterOperations.Find(id);
             if (shelterOperations == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace VETPRO2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ShelterOperations shelterOperations = db.ShelterOperationses.Find(id);
-            db.ShelterOperationses.Remove(shelterOperations);
+            ShelterOperations shelterOperations = db.ShelterOperations.Find(id);
+            db.ShelterOperations.Remove(shelterOperations);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

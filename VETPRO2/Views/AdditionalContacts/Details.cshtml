@@ -1,4 +1,7 @@
-﻿@model VETPRO2.Models.AdditionalContact
+﻿@{
+    Layout = "~/Views/Shared/Facility.cshtml";
+}
+@model VETPRO2.Models.AdditionalContact
 
 @{
     ViewBag.Title = "Details";
@@ -54,5 +57,4 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
 </p>

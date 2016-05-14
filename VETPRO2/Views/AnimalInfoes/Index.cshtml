@@ -1,4 +1,7 @@
-﻿@model IEnumerable<VETPRO2.Models.AnimalInfo>
+﻿@{
+    Layout = "~/Views/Shared/Facility.cshtml";
+}
+@model IEnumerable<VETPRO2.Models.AnimalInfo>
 
 @{
     ViewBag.Title = "Index";
@@ -7,13 +10,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", "OwnerInfoes")
+    @Html.ActionLink("Create New", "Create", "Home")
 </p>
 <table>
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerId)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.AnimalName)
         </th>
@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.OwnerId)
+            @Html.DisplayFor(modelItem => item.AnimalId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AnimalName)
@@ -59,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.AnimalDescription)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AnimalId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AnimalId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AnimalId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
